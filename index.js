@@ -50,7 +50,7 @@ function addGamesToPage(games) {
 
 }
 
-//    addGamesToPage(GAMES_JSON)
+   addGamesToPage(GAMES_JSON)
 // later, we'll call this function using a different list of games
 
 
@@ -173,10 +173,13 @@ const unfundedGames = GAMES_JSON.filter((game)=>{
 
 
 // create a string that explains the number of unfunded games using the ternary operator
-const str = `A total of ${unfundedGames==1 ? "1 game is unfunded": unfundedGames + " games are unfunded"}`
+const str1 = `A total of ${unfundedGames==1 ? "1 game is unfunded.": unfundedGames + " games are unfunded."}`
+
 
 // create a new DOM element containing the template string and append it to the description container
-descriptionContainer.innerHTML = str;
+const paragraph = document.createElement("p");
+paragraph.textContent = str1;
+descriptionContainer.appendChild(paragraph);
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 
